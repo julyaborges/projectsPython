@@ -1,0 +1,1 @@
+cor = input("Digite sua cor favorita:")

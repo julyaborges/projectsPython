@@ -1,8 +1,6 @@
-import math
+int = int(input('Insira um número inteiro:'))
 
-num = float(input('Insira um número inteiro ou decimal: '))
-
-if num == math.floor(num):
-    print(f'Número inteiro')
+if int % 2 == 0:
+    print(f'É par!')
 else:
-    print(f'Número decimal')
+    print(f'É ímpar!')

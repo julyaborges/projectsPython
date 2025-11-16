@@ -1,25 +1,38 @@
-import sys
+print(f'-- INVESTIGAÇÃO --')
+print(f'Responda apenas: s/n')
 
-print(f'--   POSTO DE COMBUSTÍVEL    --')
-print(f'-- A - Álcool | G - Gasolina --')
+pontos = 0
 
-tipoCombustivel = input('Tipo de combustível? A/G: ')
-litros = int(input('Quantidade de litros: '))
+telefoneVitima = input("Telefonou para a vítima?")
 
-valor = 0
+if telefoneVitima == 's' or telefoneVitima == 'S':
+    pontos+= 1
 
-if tipoCombustivel == 'A' or tipoCombustivel == 'a':
-    if litros <= 20:
-        valor = round((litros * 1.90) -  ((litros * 1.90) * (1.90 * 0.03)), 2)
-    else:
-        valor = round((litros * 1.90) -  ((litros * 1.90) * (1.90 * 0.05)), 2)
-elif tipoCombustivel == 'G' or tipoCombustivel == 'g':
-    if litros <= 20:
-        valor = round((litros * 2.50) -  ((litros * 2.50) * (2.50 * 0.04)), 2)
-    else:
-        valor = round((litros * 2.50) -  ((litros * 2.50) * (2.50 * 0.06)), 2)
+localCrime = input("Esteve no local do crime?")
+
+if localCrime == 's' or localCrime == 'S':
+    pontos+= 1
+
+moraPerto = input("Mora perto da vítima?")
+
+if moraPerto == 's' or moraPerto == 'S':
+    pontos+= 1
+
+deviaVitima = input("Devia para a vítima?")
+
+if deviaVitima == 's' or deviaVitima == 'S':
+    pontos+= 1
+
+trabalhoVitima = input("Já trabalhou com a vítima?")
+
+if trabalhoVitima == 's' or trabalhoVitima == 'S':
+    pontos+= 1
+
+if pontos == 2:
+    print('Suspeita')
+elif pontos == 3 or pontos == 4:
+    print('Cúmplice')
+elif pontos == 5:
+    print('Assassino')
 else:
-    print(f'Tipo de combustível inválido.')
-    sys.exit()
-
-print(f'Total a ser pago: R${valor}')
+    print('Inocente')

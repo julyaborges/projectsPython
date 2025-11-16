@@ -1,38 +1,41 @@
-print(f'-- INVESTIGAÇÃO --')
-print(f'Responda apenas: s/n')
+import sys
+import math
 
-pontos = 0
+print(f'-- CALCULE --')
 
-telefoneVitima = input("Telefonou para a vítima?")
+num1 = int(input('Insira o 1° número: '))
+operador = input('Qual operação você deseja realizar: (+, -, / ou *)')
+num2 = int(input('Insira o 2° número: '))
 
-if telefoneVitima == 's' or telefoneVitima == 'S':
-    pontos+= 1
+resultado = 0
 
-localCrime = input("Esteve no local do crime?")
-
-if localCrime == 's' or localCrime == 'S':
-    pontos+= 1
-
-moraPerto = input("Mora perto da vítima?")
-
-if moraPerto == 's' or moraPerto == 'S':
-    pontos+= 1
-
-deviaVitima = input("Devia para a vítima?")
-
-if deviaVitima == 's' or deviaVitima == 'S':
-    pontos+= 1
-
-trabalhoVitima = input("Já trabalhou com a vítima?")
-
-if trabalhoVitima == 's' or trabalhoVitima == 'S':
-    pontos+= 1
-
-if pontos == 2:
-    print('Suspeita')
-elif pontos == 3 or pontos == 4:
-    print('Cúmplice')
-elif pontos == 5:
-    print('Assassino')
+if operador == '+':
+    resultado = num1 + num2
+    print(f'{num1} + {num2} = {resultado}')
+elif operador == '-':
+    resultado = num1 - num2
+    print(f'{num1} - {num2} = {resultado}')
+elif operador == '/':
+    resultado = num1 / num2
+    print(f'{num1} / {num2} = {resultado}')
+elif operador == '*':
+    resultado = num1 * num2
+    print(f'{num1} * {num2} = {resultado}')
 else:
-    print('Inocente')
+    print(f'Operador inválido')
+    sys.exit()
+
+if resultado % 2 == 0:
+    print(f'O resultado é par')
+else:
+    print(f'O resultado é ímpar')
+
+if resultado < 0:
+    print(f'O resultado é negativo')
+else:
+    print(f'O resultado é positivo')
+
+if resultado == math.floor(resultado):
+    print(f'O resultado é inteiro')
+else:
+    print(f'O resultado é decimal')

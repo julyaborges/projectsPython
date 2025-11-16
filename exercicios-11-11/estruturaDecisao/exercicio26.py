@@ -1,27 +1,25 @@
 import sys
 
-print(f'-- FRUTEIRA --')
+print(f'--   POSTO DE COMBUSTÍVEL    --')
+print(f'-- A - Álcool | G - Gasolina --')
 
-morango = float(input('Morango Kg: '))
-precoMorango = 0
+tipoCombustivel = input('Tipo de combustível? A/G: ')
+litros = int(input('Quantidade de litros: '))
 
-maca = float(input('Maçã Kg: ')) 
-precoMaca = 0
+valor = 0
 
-if morango <= 5:
-    precoMorango = morango * 2.50
+if tipoCombustivel == 'A' or tipoCombustivel == 'a':
+    if litros <= 20:
+        valor = round((litros * 1.90) -  ((litros * 1.90) * (1.90 * 0.03)), 2)
+    else:
+        valor = round((litros * 1.90) -  ((litros * 1.90) * (1.90 * 0.05)), 2)
+elif tipoCombustivel == 'G' or tipoCombustivel == 'g':
+    if litros <= 20:
+        valor = round((litros * 2.50) -  ((litros * 2.50) * (2.50 * 0.04)), 2)
+    else:
+        valor = round((litros * 2.50) -  ((litros * 2.50) * (2.50 * 0.06)), 2)
 else:
-    precoMorango = morango * 2.20    
+    print(f'Tipo de combustível inválido.')
+    sys.exit()
 
-if maca <= 5:
-    precoMaca = maca * 1.80
-else:
-    precoMaca = maca * 1.50  
-
-totalPreco = precoMaca + precoMorango
-
-if morango + maca > 8 or totalPreco > 25.0:
-    totalPreco = totalPreco - (totalPreco * 0.10)
-    print(f'Você recebeu 10% de desconto - Total: R${totalPreco}')
-else:
-    print(f'Total: R${totalPreco}')
+print(f'Total a ser pago: R${valor}')

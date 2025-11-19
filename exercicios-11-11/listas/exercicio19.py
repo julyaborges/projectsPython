@@ -67,5 +67,7 @@ elif percentual4 > percentual1 and percentual4 > percentual2 and percentual4 > p
     print(f'O Sistema Operacional mais votado foi o Netware, com {votos[3]} votos, correspondendo a {percentual4}% dos votos.')
 elif percentual5 > percentual1 and percentual5 > percentual2 and percentual5 > percentual3 and percentual5 > percentual4 and percentual5 > percentual6:
     print(f'O Sistema Operacional mais votado foi o Mac OS, com {votos[4]} votos, correspondendo a {percentual5}% dos votos.')
-else:
+elif percentual6 > percentual1 and percentual6 > percentual2 and percentual6 > percentual3 and percentual6 > percentual4 and percentual6 > percentual5:
     print(f'Outros sistemas operacionais foram considerados melhores, com {votos[5]} votos, correspondendo a {percentual6}% dos votos.')
+else:
+    print(f'Empate!')

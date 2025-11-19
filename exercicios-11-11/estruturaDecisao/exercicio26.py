@@ -1,5 +1,3 @@
-import sys
-
 print(f'--   POSTO DE COMBUSTÍVEL    --')
 print(f'-- A - Álcool | G - Gasolina --')
 
@@ -20,6 +18,6 @@ elif tipoCombustivel == 'G' or tipoCombustivel == 'g':
         valor = round((litros * 2.50) -  ((litros * 2.50) * (2.50 * 0.06)), 2)
 else:
     print(f'Tipo de combustível inválido.')
-    sys.exit()
+    exit()
 
 print(f'Total a ser pago: R${valor}')
